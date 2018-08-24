@@ -1,0 +1,3 @@
+test-folder/books/myhero.mp3
+test-folder/assets/myhero.mp3
+test-folder/videos/myhero.mp3
