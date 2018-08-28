@@ -1,3 +1,5 @@
 file_replace_success.log
 file_replace_error.log
 book-directory-list.txt
+reverse_replacement_error.log
+reverse_replacement_success.log
