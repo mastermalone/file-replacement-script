@@ -13,7 +13,7 @@ function getDirectoryListAndSetFileVariableValues() {
   read -p "Provide the name of the file you wish to replace: " target_file_name;
   read -p "Provide the name of the replacement file: " replcement_file_name;
   
-  if [[ -z $file_directory_list|| -z $target_file_name || -z $replcement_file_name ]];
+  if [[ -z $file_directory_list || -z $target_file_name || -z $replcement_file_name ]];
   then
     echo "You did not provide information for one of the previously requested files."; 
   else
@@ -111,7 +111,7 @@ function reverseReplacement() {
       root_folder="${fspec#*/*}"; #get directory/path name
       if [[ -d $dir_name/original_$target_file_name ]];
       then
-        echo "Found the original_$target_file_name directory";
+        printf "Found the original_$target_file_name directory\n";
         if [[ -f $dir_name/original_$target_file_name/$target_file_name ]];
         then
           rm $dir_name/$replcement_file_name;
@@ -150,14 +150,14 @@ while getopts R:r:h param ;
   do    
     case $param in 
       R)
-        echo "Setting the -R flag for Replace";
+        echo "Ready to replace the file? Provide the file information. Provide the file information below:";
         replaceFile=true;
         init
         exit
         ;;
         
       r)
-        echo "Setting the -r flag for reverse";
+        echo "Ready to reverse the file replacement?. Provide the file information below:";
         replaceFile=false;
         init
         exit
