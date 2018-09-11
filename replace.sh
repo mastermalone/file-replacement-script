@@ -1,5 +1,5 @@
 #!/bin/bash
-#Example: ./rename.sh file-directory-list.txt then follow the prompts
+#Example: ./rename.sh <-R (replace) or -r (reverse the previous replacement)>file-directory-list.txt then follow the prompts
 file_directory_list=$2
 #target_file_name=${2?Error: No target file provided}
 #replcement_file_name=${3?Error: No replacement file provided}
@@ -169,9 +169,11 @@ while getopts R:r:h param ;
         exit
         ;;
         
-        *)
-          usage
-          echo "Invalid Argument"
+      *)
+        usage
+        echo "Invalid Argument"
+        exit
+        ;;
     esac
   done
 
